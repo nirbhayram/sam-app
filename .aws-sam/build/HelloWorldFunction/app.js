@@ -1,3 +1,5 @@
+const { v4 } = require('uuid');
+
 // const axios = require('axios')
 // const url = 'http://checkip.amazonaws.com/';
 let response;
@@ -16,11 +18,13 @@ let response;
  */
 exports.lambdaHandler = async (event, context) => {
     try {
+
+        let uuid = v4()
         // const ret = await axios(url);
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello',
+                message: v4(), 
                 // location: ret.data.trim()
             })
         }
